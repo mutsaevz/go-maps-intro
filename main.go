@@ -70,7 +70,8 @@ func main() {
 	b := a
 	b["Mon"] = 99
 	fmt.Println(a, b)
-	fmt.Println(clone(map[string]int{"Mon": 10}))
+	fmt.Println("trger", clone(map[string]int{"Mon": 10,"Tue": 15,}))
+
 
 	fmt.Println(WordCount("go go gopher go"))
 
@@ -101,8 +102,13 @@ func Remove(phones map[string]string, name string) {
 }
 
 func clone(src map[string]int) map[string]int {
-	a := src
+	a := make(map[string]int)
 
+	a = src
+
+	for i, v := range src{
+		a[i] = v
+	}
 	return a
 }
 func WordCount(s string) map[string]int {
